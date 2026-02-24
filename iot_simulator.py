@@ -15,4 +15,4 @@ while True:
 
     requests.post(URL, json=payload)
     print("Dados enviados:", payload)
-    time.sleep(10)
+    time.sleep(5)

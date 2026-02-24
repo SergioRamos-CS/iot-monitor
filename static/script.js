@@ -16,7 +16,7 @@ const tempChart = new Chart(tempCtx, {
       {
         label: "Temperatura (°C)",
         data: [],
-        borderWidth: 2
+        borderWidth: 1
       },
       {
         label: "Mínimo Ideal",
@@ -47,7 +47,7 @@ const humChart = new Chart(humCtx, {
       {
         label: "Umidade (%)",
         data: [],
-        borderWidth: 2
+        borderWidth: 1
       },
       {
         label: "Mínimo Ideal",
