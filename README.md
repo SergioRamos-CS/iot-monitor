@@ -1,26 +1,32 @@
-# 🌐 IoT Monitor Web – Sistema de Monitoramento Simulado
+# 🌡️ IoT Monitor – Monitoramento de Temperatura e Umidade
 
-Este projeto é um sistema de monitoramento de sensores IoT desenvolvido em **Python (Flask)**. Ele simula a coleta de dados de temperatura e umidade, armazena em um banco de dados relacional e exibe as informações em um dashboard com gráficos em tempo real.
+Projeto acadêmico desenvolvido no âmbito do **Projeto Integrador**, com o objetivo de implementar um sistema web para **monitoramento de dados ambientais simulados por sensores IoT**, permitindo visualização em tempo real, armazenamento em banco de dados e exportação de relatórios.
 
 ---
 
-## 🚀 Funcionalidades
+## 📌 Objetivo do Projeto
 
-- **API REST:** Recebe dados de sensores via JSON (Endpoint `/api/data`).
-- **Banco de Dados:** Persistência de dados utilizando SQLite e SQLAlchemy.
-- **Dashboard Real-time:** Gráficos dinâmicos utilizando **Chart.js**.
-- **Simulador IoT:** Script autônomo que gera e envia dados aleatórios para simular hardware físico.
-- **Interface Responsiva:** Visual focado em legibilidade e monitoramento técnico.
+Desenvolver uma aplicação web capaz de:
+- Receber dados de sensores IoT simulados
+- Armazenar dados ambientais (temperatura e umidade)
+- Exibir gráficos dinâmicos em um dashboard responsivo
+- Destacar faixas ideais de operação
+- Exportar relatórios em formato CSV
+- Garantir confiabilidade por meio de testes automatizados
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Backend:** [Flask](https://flask.palletsprojects.com/) (Python)
-- **Banco de Dados:** SQLite (SQLAlchemy ORM)
-- **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
-- **Gráficos:** [Chart.js](https://www.chartjs.org/)
-- **Ambiente:** GitHub Codespaces / Git
+- **Python 3.12**
+- **Flask** – backend e API REST
+- **Flask-SQLAlchemy** – ORM
+- **SQLite** – banco de dados
+- **HTML5 / CSS3**
+- **JavaScript**
+- **Chart.js** – gráficos
+- **Pytest** – testes automatizados
+- **Git/GitHub** – controle de versão
 
 ---
 
@@ -28,14 +34,24 @@ Este projeto é um sistema de monitoramento de sensores IoT desenvolvido em **Py
 
 ```text
 iot-monitor/
-├── app.py               # Servidor Flask e rotas da API
-├── models.py            # Definição do banco de dados
-├── requirements.txt     # Dependências do projeto
-├── iot_simulator.py     # Script que simula o sensor IoT
-├── static/
-│   └── script.js        # Lógica de atualização do gráfico
+│
+├── app.py
+├── models.py
+├── database.db
+├── iot_simulator.py
+├── requirements.txt
+│
 ├── templates/
-│   └── dashboard.html   # Interface do usuário
-└── tests/
-    └── test_api.py      # Testes básicos de integração
-```
+│   └── dashboard.html
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── dashboard.js
+│
+├── tests/
+│   ├── conftest.py
+│   └── test_api.py
+│
+└── README.md
