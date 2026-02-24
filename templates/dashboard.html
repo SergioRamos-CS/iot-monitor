@@ -1,15 +1,67 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Monitor IoT</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Monitoramento IoT</title>
+
+  <!-- CSS EXTERNO -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <header>
     <h1>Monitoramento IoT</h1>
+    <p>Sistema Web para Monitoramento de Sensores Simulados</p>
+  </header>
 
-    <canvas id="chart"></canvas>
+  <main class="container">
 
-    <script src="/static/script.js"></script>
-  </body>
+    <div class="grid-graficos">
+
+      <section class="card">
+        <h2>Temperatura (°C)</h2>
+        <canvas id="tempChart"></canvas>
+      </section>
+
+      <section class="card">
+        <h2>Umidade Relativa (%)</h2>
+        <canvas id="humChart"></canvas>
+      </section>
+
+    </div>
+
+  <section class="card">
+    <h2>Exportar Relatório</h2>
+
+    <form action="/export/csv" method="get">
+      <div>
+        <label for="inicio">Data/Hora Início</label>
+        <input type="datetime-local" name="inicio" id="inicio" required>
+      </div>
+
+      <div>
+        <label for="fim">Data/Hora Fim</label>
+        <input type="datetime-local" name="fim" id="fim" required>
+      </div>
+
+      <div>
+        <button type="submit">📥 Baixar CSV</button>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+  <footer>
+    Projeto Integrador lll – Engenharia da Computação
+  </footer>
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
 </html>
